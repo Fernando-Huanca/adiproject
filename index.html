@@ -10,62 +10,134 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600&display=swap"
         rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
     <style>
         html {
             scroll-behavior: smooth;
         }
 
         body {
-            background-color: #F5E8D2;
             font-family: 'Poppins', sans-serif;
             padding-top: 80px;
+            transition: background .5s ease, color .5s ease;
         }
 
-        footer {
-            background-color: #6c8ba4;
-            color: white;
+        body.dark-mode {
+            background: linear-gradient(135deg, #141e30, #243b55);
+            color: #f4f4f4;
         }
 
-        .custom-navbar {
-            background-color: #F5E8D2;
+        body.dark-mode footer {
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+        }
+
+        body.dark-mode .custom-navbar {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        body.dark-mode .custom-navbar .nav-link,
+        body.dark-mode .custom-navbar .navbar-brand {
+            color: #fff !important;
+        }
+
+        body.dark-mode .custom-navbar .nav-link:hover {
+            color: #ffc107 !important;
+        }
+
+        body.dark-mode .carousel-inner {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        body.dark-mode .textoCar {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        body.dark-mode .card {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        body.dark-mode .acerca-section {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        body.dark-mode .contacto-section {
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+        }
+
+        body.light-mode {
+            background: #f5f5f5;
+            color: #222;
+        }
+
+        body.light-mode footer {
+            background: #eaeaea;
+            color: #222;
+        }
+
+        body.light-mode .custom-navbar {
+            background: #fff;
+        }
+
+        body.light-mode .custom-navbar .nav-link,
+        body.light-mode .custom-navbar .navbar-brand {
+            color: #222 !important;
+        }
+
+        body.light-mode .custom-navbar .nav-link:hover {
+            color: #007bff !important;
+        }
+
+        body.light-mode .carousel-inner {
+            background: #fff;
+        }
+
+        body.light-mode .textoCar {
+            background: #f0f0f0;
+            color: #222;
+        }
+
+        body.light-mode .card {
+            background: #fff;
+            color: #222;
+        }
+
+        body.light-mode .acerca-section {
+            background: #fff;
+            color: #222;
+        }
+
+        body.light-mode .contacto-section {
+            background: #fff;
+            color: #222;
         }
 
         .custom-navbar .nav-link,
         .custom-navbar .navbar-brand {
-            color: #6c8ba4 !important;
-        }
-
-        .custom-navbar .nav-link:hover {
-            color: #ffc107 !important;
+            font-weight: 600;
+            letter-spacing: 1px;
         }
 
         .ilustradora {
             display: grid;
             place-items: center;
             text-align: center;
-            padding: 20px 0;
-            background-color: #F5E8D2;
+            padding: 80px 20px;
         }
 
         .ilustradora h1 {
-            font-family: 'Montserrat', sans-serif !important;
-            font-weight: 700 !important;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
             font-size: clamp(28px, 6vw, 48px);
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: #6c8ba4 !important;
-            margin: 0;
-            line-height: 1.1;
+            letter-spacing: .15em;
         }
 
-        /* Carrusel */
         .carousel-inner {
             border-radius: 20px;
             overflow: hidden;
-            background: linear-gradient(135deg, #f9f4ec, #e6dcd0);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, .4);
         }
 
         .carousel-item img {
@@ -75,52 +147,54 @@
         }
 
         .textoCar {
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 20px;
-            padding: 25px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .textoCar h2 {
+            font-size: clamp(18px, 3vw, 24px);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .textoCar p {
+            font-size: clamp(14px, 2.5vw, 16px);
         }
 
         .carousel-control-prev-icon,
         .carousel-control-next-icon {
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(255, 255, 255, 0.6);
             border-radius: 50%;
             padding: 20px;
             background-size: 60% 60%;
         }
 
-        /* Cards */
         .card {
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            transition: transform 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .3);
+            transition: transform .3s ease;
         }
 
         .card:hover {
             transform: translateY(-8px);
         }
 
-        /* Acerca de mi */
         .acerca-section {
             padding: 60px 20px;
-            background: linear-gradient(135deg, #e9eef3, #fdfcfb);
-        }
-
-        .acerca-text {
-            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 50px;
         }
 
         .acerca-text h2 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            color: #6c8ba4;
             margin-bottom: 20px;
         }
 
         .acerca-text p {
             line-height: 1.8;
-            color: #333;
         }
 
         .acerca-section img {
@@ -128,15 +202,13 @@
             width: 100%;
             max-height: 350px;
             object-fit: contain;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, .3);
         }
 
-        /* Contacto */
         .contacto-section {
             padding: 60px 20px;
-            background-color: #6c8ba4;
-            color: white;
             text-align: center;
+            border-radius: 20px;
         }
 
         .contacto-section h2 {
@@ -154,93 +226,101 @@
         }
 
         .contact-links a {
-            color: white;
             font-size: 2rem;
-            transition: 0.3s;
+            transition: .3s;
         }
 
         .contact-links a:hover {
             color: #ffc107;
         }
+
+        @media (max-width: 768px) {
+            .textoCar {
+                text-align: center;
+                margin-top: 15px;
+            }
+
+            .textoCar h2 {
+                font-size: 20px;
+            }
+        }
+
+        .mode-toggle {
+            border: none;
+            background: transparent;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: inherit;
+        }
+        
+        .imagen{
+            border-radius: 50px;
+            padding: 30px;
+        }
     </style>
 </head>
 
-<body>
-    <!-- Navbar -->
+<body class="dark-mode">
     <nav class="navbar navbar-expand-lg fixed-top custom-navbar shadow-sm">
         <div class="container-fluid">
             <a class="navbar-brand fw-bold" href="#">ADI.CT</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+                data-bs-target="#navbarSupportedContent">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                    <li class="nav-item mx-4">
-                        <a class="nav-link active" href="#inicio">INICIO</a>
-                    </li>
-                    <li class="nav-item mx-4">
-                        <a class="nav-link" href="#acerca">ACERCA DE MI</a>
-                    </li>
-                    <li class="nav-item mx-4">
-                        <a class="nav-link" href="#portfolio">PORTFOLIO</a>
-                    </li>
-                    <li class="nav-item mx-4">
-                        <a class="nav-link" href="#contacto">CONTACTO</a>
-                    </li>
+                    <li class="nav-item mx-4"><a class="nav-link active" href="#inicio">INICIO</a></li>
+                    <li class="nav-item mx-4"><a class="nav-link" href="#acerca">ACERCA DE MI</a></li>
+                    <li class="nav-item mx-4"><a class="nav-link" href="#portfolio">PORTFOLIO</a></li>
+                    <li class="nav-item mx-4"><a class="nav-link" href="#contacto">CONTACTO</a></li>
                 </ul>
+                <button id="toggleMode" class="mode-toggle ms-3"><i class="fas fa-moon"></i></button>
             </div>
         </div>
     </nav>
 
-    <!-- INICIO -->
     <div id="inicio" class="row ilustradora">
         <h1>ILUSTRADORA</h1>
     </div>
 
-    <!-- CARRUSEL -->
     <div id="carouselExampleCaptions" class="carousel slide container mb-5">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="row align-items-center">
-                    <div class="col-md-7">
+                    <div class="col-md-7 imagen">
                         <img src="./imagenes/adiBicentenario.jpg" alt="Imagen1">
                     </div>
-                    <div class="col-md-5 textoCar">
+                    <div class="col-md-4 textoCar">
                         <h2>Primera ilustración</h2>
                         <p>Contenido de ejemplo representativo para la primera ilustración.</p>
                     </div>
                 </div>
             </div>
-
             <div class="carousel-item">
                 <div class="row align-items-center">
-                    <div class="col-md-7">
+                    <div class="col-md-7 imagen">
                         <img src="./imagenes/adiYukawaii.png.jpeg" alt="Imagen2">
                     </div>
-                    <div class="col-md-5 textoCar">
+                    <div class="col-md-4 textoCar">
                         <h2>Segunda ilustración</h2>
                         <p>Texto de ejemplo para la segunda ilustración dentro del carrusel.</p>
                     </div>
                 </div>
             </div>
-
             <div class="carousel-item">
                 <div class="row align-items-center">
-                    <div class="col-md-7">
+                    <div class="col-md-7 imagen">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE3_oG0qiv0N2SsTLIMIW0WbE6QDliPNZGJw&s"
                             alt="Imagen3">
                     </div>
-                    <div class="col-md-5 textoCar">
+                    <div class="col-md-4 textoCar">
                         <h2>Tercera ilustración</h2>
                         <p>Ejemplo de texto para acompañar la tercera ilustración del carrusel.</p>
                     </div>
                 </div>
             </div>
         </div>
-
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
             data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
@@ -251,29 +331,21 @@
         </button>
     </div>
 
-    <!-- ACERCA DE MI -->
     <div id="acerca" class="acerca-section container">
         <div class="row align-items-center">
             <div class="col-md-6 acerca-text">
                 <h2>Acerca de mí</h2>
                 <p>
-                    ✨ Hola, soy Adi (@adi.ct_) ✨ <br>
-                    Soy ilustradora digital y mi lienzo favorito es… ¡el celular! 🎨📱 Sí, dibujo con el dedo y con lo
-                    que tengo a mano, porque creo que el arte no necesita grandes herramientas para transmitir
-                    emociones. <br>
-
-                    Mi estilo es espontáneo, colorido y con mucho humor, mezclando lo tierno con lo surreal, lo
-                    cotidiano con lo fantástico. Me gusta transformar ideas simples en algo que te haga sonreír, pensar
-                    o sentir identificado. <br>
-
-                    En mi comunidad comparto no solo mis ilustraciones, sino también un pedacito de mi mundo: bocetos
-                    rápidos, ocurrencias y proyectos en los que estoy trabajando. 🌈 <br>
-
-                    💌 Hago comisiones personalizadas (perfectas para regalos únicos o retratos con mi estilo).
-                    🤝 También estoy abierta a colaboraciones creativas con marcas o creadores que quieran darle un giro
-                    artístico y diferente a sus proyectos. <br>
-
-                    Si te gusta el arte fresco, digital y sin miedo a ser auténtico, ¡bienvenid@ a mi rincón! 🚀💖
+                    ✨ Hola, soy Adi (@adi.ct_) ✨ <br> Soy ilustradora digital y mi lienzo favorito es… ¡el celular! 🎨📱
+                    Sí, dibujo con el dedo y con lo que tengo a mano, porque creo que el arte no necesita grandes
+                    herramientas para transmitir emociones. <br> Mi estilo es espontáneo, colorido y con mucho humor,
+                    mezclando lo tierno con lo surreal, lo cotidiano con lo fantástico. Me gusta transformar ideas
+                    simples en algo que te haga sonreír, pensar o sentir identificado. <br> En mi comunidad comparto no
+                    solo mis ilustraciones, sino también un pedacito de mi mundo: bocetos rápidos, ocurrencias y
+                    proyectos en los que estoy trabajando. 🌈 <br> 💌 Hago comisiones personalizadas (perfectas para
+                    regalos únicos o retratos con mi estilo). 🤝 También estoy abierta a colaboraciones creativas con
+                    marcas o creadores que quieran darle un giro artístico y diferente a sus proyectos. <br> Si te gusta
+                    el arte fresco, digital y sin miedo a ser auténtico, ¡bienvenid@ a mi rincón! 🚀💖
                 </p>
             </div>
             <div class="col-md-6">
@@ -282,7 +354,6 @@
         </div>
     </div>
 
-    <!-- PORTAFOLIO -->
     <div id="portfolio" class="row ilustradora">
         <h1>PORTAFOLIO</h1>
     </div>
@@ -343,8 +414,7 @@
         </div>
     </div>
 
-    <!-- CONTACTO -->
-    <div id="contacto" class="contacto-section">
+    <div id="contacto" class="contacto-section container">
         <h2>Contacto</h2>
         <p>Si quieres ponerte en contacto conmigo, puedes escribirme o seguirme en mis redes sociales:</p>
         <div class="contact-links">
@@ -354,14 +424,24 @@
         </div>
     </div>
 
-    <!-- FOOTER -->
     <footer class="text-center py-3">
         <p>&copy; 2025 - Adi.ct Companies</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const toggleBtn = document.getElementById("toggleMode");
+        const body = document.body;
+        toggleBtn.addEventListener("click", () => {
+            body.classList.toggle("dark-mode");
+            body.classList.toggle("light-mode");
+            if (body.classList.contains("dark-mode")) {
+                toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+            } else {
+                toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+            }
+        });
+    </script>
 </body>
 
 </html>
-
-<!--Made by Noxux_gg-->
