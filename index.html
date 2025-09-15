@@ -257,6 +257,18 @@
             border-radius: 50px;
             padding: 30px;
         }
+
+        .scroll-item{
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.6s ease-out;
+        }
+
+        .scroll-item.visible{
+            opacity: 1;
+            transform: translateY(0);
+        }
+
     </style>
 </head>
 
@@ -331,7 +343,7 @@
         </button>
     </div>
 
-    <div id="acerca" class="acerca-section container">
+    <div id="acerca" class="acerca-section container scroll-item">
         <div class="row align-items-center">
             <div class="col-md-6 acerca-text">
                 <h2>Acerca de mí</h2>
@@ -354,13 +366,13 @@
         </div>
     </div>
 
-    <div id="portfolio" class="row ilustradora">
+    <div id="portfolio" class="row ilustradora scroll-item">
         <h1>PORTAFOLIO</h1>
     </div>
     <div class="container py-5">
         <div class="row g-4">
             <div class="col-md-4 d-flex justify-content-center">
-                <div class="card" style="width: 18rem;">
+                <div class="card scroll-item" style="width: 18rem;">
                     <img src="./imagenes/adiAsra.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <p class="card-text">Esta es una descripción</p>
@@ -368,7 +380,7 @@
                 </div>
             </div>
             <div class="col-md-4 d-flex justify-content-center">
-                <div class="card" style="width: 18rem;">
+                <div class="card scroll-item" style="width: 18rem;">
                     <img src="./imagenes/adiTablas.jpeg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <p class="card-text">Esta es una descripción</p>
@@ -376,7 +388,7 @@
                 </div>
             </div>
             <div class="col-md-4 d-flex justify-content-center">
-                <div class="card" style="width: 18rem;">
+                <div class="card scroll-item" style="width: 18rem;">
                     <img src="./imagenes/adiYo.jpeg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <p class="card-text">Esta es una descripción</p>
@@ -388,7 +400,7 @@
     <div class="container py-5">
         <div class="row g-4">
             <div class="col-md-4 d-flex justify-content-center">
-                <div class="card" style="width: 18rem;">
+                <div class="card scroll-item" style="width: 18rem;">
                     <img src="./imagenes/adiSereno.jpeg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <p class="card-text">Esta es una descripción</p>
@@ -396,7 +408,7 @@
                 </div>
             </div>
             <div class="col-md-4 d-flex justify-content-center">
-                <div class="card" style="width: 18rem;">
+                <div class="card scroll-item" style="width: 18rem;">
                     <img src="./imagenes/adiYo2.jpeg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <p class="card-text">Esta es una descripción</p>
@@ -404,7 +416,7 @@
                 </div>
             </div>
             <div class="col-md-4 d-flex justify-content-center">
-                <div class="card" style="width: 18rem;">
+                <div class="card scroll-item" style="width: 18rem;">
                     <img src="./imagenes/adiHomo.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <p class="card-text">Esta es una descripción</p>
@@ -414,7 +426,7 @@
         </div>
     </div>
 
-    <div id="contacto" class="contacto-section container">
+    <div id="contacto" class="contacto-section container scroll-item">
         <h2>Contacto</h2>
         <p>Si quieres ponerte en contacto conmigo, puedes escribirme o seguirme en mis redes sociales:</p>
         <div class="contact-links">
@@ -442,6 +454,7 @@
             }
         });
     </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
